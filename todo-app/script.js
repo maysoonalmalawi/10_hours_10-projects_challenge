@@ -4,7 +4,7 @@ const todosUL = document.getElementById("todos");
 
 const todos = JSON.parse(localStorage.getItem('todos'));
 
-if('todos'){
+if(todos){
     todos.forEach(todo => {
         addTodo(todo);
     })
@@ -14,7 +14,6 @@ form.addEventListener("submit" , (e) => {
     e.preventDefault();
 
     addTodo();
-    updateLs();
 });
 
 
@@ -51,6 +50,8 @@ function addTodo(todo){
 
         todosUL.appendChild(todoEl);
         input.value = "";
+
+        updateLs();
     }
 }
 
